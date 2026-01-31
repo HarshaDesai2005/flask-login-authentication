@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Login Authentication</div>
+        <div class="nav-links">
+            <a href="{{ url_for('logout') }}"><i class="fas fa-sign-out-alt"></i> Logout</a>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="welcome-icon">
+            <i class="fas fa-user-circle"></i>
+        </div>
+        <h2>Welcome, {{ current_user.name }}!</h2>
+        <p>You are successfully logged in.<br>Enjoy your session!</p>
+        <form method="GET" action="{{ url_for('logout') }}">
+            <button type="submit" class="btn">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </button>
+        </form>
+    </div>
+</body>
+</html> 
